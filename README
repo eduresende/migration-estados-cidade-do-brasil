@@ -1,0 +1,19 @@
+Migration que popula o banco de dados com os estados e cidades do Brasil
+
+para utilizálo é necessário criar os seguintes models
+
+Estado
+	sigla:string
+	nome:string
+
+Cidade
+	nome:string
+	estado_id:integer
+
+e informar os relacionamentos nos models
+
+cidade.rb
+	belongs_to :estado
+
+estado.rb
+	has_many :cidades
