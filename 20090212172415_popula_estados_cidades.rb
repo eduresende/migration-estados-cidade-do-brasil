@@ -9622,7 +9622,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
       e.cidades.build(:nome => 'ZACARIAS')
     end
     
-    Estado.create(:sigla => 'TP', :nome => 'TOCANTINS') do |e|
+    Estado.create(:sigla => 'TO', :nome => 'TOCANTINS') do |e|
       e.cidades.build(:nome => 'ABREULANDIA')
       e.cidades.build(:nome => 'AGUIARNOPOLIS')
       e.cidades.build(:nome => 'ALIANCA DO TOCANTINS')
