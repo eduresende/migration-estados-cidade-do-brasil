@@ -1,6 +1,6 @@
-Migration que popula o banco de dados com os estados e cidades do Brasil
+Migration que popula o banco de dados com os estados e cidades do Brasil com dados extraídos do site do IBGE, em http://www.sidra.ibge.gov.br/bda/territorio/download/dtb2006.zip
 
-para utilizálo é necessário criar os seguintes models
+para utilizá-la é necessário criar os seguintes models
 
 Estado
 	sigla:string
