@@ -822,7 +822,35 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     end
 
     Estado.create(:sigla => 'DF', :nome => "Distrito Federal") do |e|
+      e.cidades.build(:nome => "Águas Claras")
       e.cidades.build(:nome => "Brasília")
+      e.cidades.build(:nome => "Brazlândia")
+      e.cidades.build(:nome => "Candangolândia")
+      e.cidades.build(:nome => "Ceilândia")
+      e.cidades.build(:nome => "Cruzeiro")
+      e.cidades.build(:nome => "Gama")
+      e.cidades.build(:nome => "Guará")
+      e.cidades.build(:nome => "Itapoã")
+      e.cidades.build(:nome => "Jardim Botânico")
+      e.cidades.build(:nome => "Lago Norte")
+      e.cidades.build(:nome => "Lago Sul")
+      e.cidades.build(:nome => "Núcleo Bandeirante")
+      e.cidades.build(:nome => "Paranoá")
+      e.cidades.build(:nome => "Park Way")
+      e.cidades.build(:nome => "Planaltina")
+      e.cidades.build(:nome => "Recanto das Emas")
+      e.cidades.build(:nome => "Riacho Fundo")
+      e.cidades.build(:nome => "Riacho Fundo II")
+      e.cidades.build(:nome => "Samambaia")
+      e.cidades.build(:nome => "Santa Maria")
+      e.cidades.build(:nome => "São Sebastião")
+      e.cidades.build(:nome => "Sobradinho")
+      e.cidades.build(:nome => "Sobradinho II")
+      e.cidades.build(:nome => "SCIA")
+      e.cidades.build(:nome => "SIA")
+      e.cidades.build(:nome => "Sudoeste e Octogonal")
+      e.cidades.build(:nome => "Taguatinga")
+      e.cidades.build(:nome => "Varjão")
     end
 
     Estado.create(:sigla => 'ES', :nome => "Espírito Santo") do |e|
