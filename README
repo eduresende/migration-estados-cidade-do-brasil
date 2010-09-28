@@ -17,3 +17,7 @@ cidade.rb
 
 estado.rb
 	has_many :cidades
+
+
+- Modifiquei o migrarion para que funcione com Rails 3 e também funcionar também com Rails 2 :)
+- Incluindo '# -*- coding: UTF-8 -*-' no topo do arquivo para ruby 1.9.x
