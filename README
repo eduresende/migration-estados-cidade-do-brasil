@@ -3,21 +3,21 @@ Migration que popula o banco de dados com os estados e cidades do Brasil com dad
 para utilizá-la é necessário criar os seguintes models
 
 Estado
-	sigla:string
-	nome:string
+class Estado < ActiveRecord::Base
+  attr_accessible :nome, :sigla
+
+  has_many :cidades
+end
+
 
 Cidade
-	nome:string
-	estado_id:integer
-
-e informar os relacionamentos nos models
-
-cidade.rb
-	belongs_to :estado
-
-estado.rb
-	has_many :cidades
+class Cidade < ActiveRecord::Base
+  belongs_to :estado
+  attr_accessible :nome, :capital
+end
 
 
 - Modifiquei o migrarion para que funcione com Rails 3 e também funcionar também com Rails 2 :)
 - Incluindo '# -*- coding: UTF-8 -*-' no topo do arquivo para ruby 1.9.x
+- Modifiquei o nome da classe da migration que popula os estados e cidades. O rake esta comparando o nome do arquivo com o nome da classe e gerando um erro.
+- Incluí a propriedade "capital" no model "Cidade", para que seja possivel exibir a capital primeiro em um combo, por exemplo.
