@@ -17,13 +17,15 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Plácido de Castro")
     e.cidades.create(:nome => "Porto Acre")
     e.cidades.create(:nome => "Porto Walter")
-    e.cidades.create(:nome => "Rio Branco", :capital => true)
+    e.cidades.create(:nome => "Rio Branco")
     e.cidades.create(:nome => "Rodrigues Alves")
     e.cidades.create(:nome => "Santa Rosa do Purus")
     e.cidades.create(:nome => "Sena Madureira")
     e.cidades.create(:nome => "Senador Guiomard")
     e.cidades.create(:nome => "Tarauacá")
     e.cidades.create(:nome => "Xapuri")
+    e.capital = Cidade.find_by_nome_and_estado_id('Rio Branco', Estado.find_by_nome('Acre').id)
+    e.save
 
     e = Estado.create(:sigla => 'AL', :nome => "Alagoas")
     e.cidades.create(:nome => "Água Branca")
@@ -72,7 +74,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Junqueiro")
     e.cidades.create(:nome => "Lagoa da Canoa")
     e.cidades.create(:nome => "Limoeiro de Anadia")
-    e.cidades.create(:nome => "Maceió", :capital => true)
+    e.cidades.create(:nome => "Maceió")
     e.cidades.create(:nome => "Major Isidoro")
     e.cidades.create(:nome => "Mar Vermelho")
     e.cidades.create(:nome => "Maragogi")
@@ -128,6 +130,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Traipu")
     e.cidades.create(:nome => "União dos Palmares")
     e.cidades.create(:nome => "Viçosa")
+    e.capital = Cidade.find_by_nome_and_estado_id('Maceió', Estado.find_by_nome('Alagoas'))
+    e.save
 
     e = Estado.create(:sigla => 'AM', :nome => "Amazonas")
     e.cidades.create(:nome => "Alvarães")
@@ -167,7 +171,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Lábrea")
     e.cidades.create(:nome => "Manacapuru")
     e.cidades.create(:nome => "Manaquiri")
-    e.cidades.create(:nome => "Manaus", :capital => true)
+    e.cidades.create(:nome => "Manaus")
     e.cidades.create(:nome => "Manicoré")
     e.cidades.create(:nome => "Maraã")
     e.cidades.create(:nome => "Maués")
@@ -192,6 +196,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Uarini")
     e.cidades.create(:nome => "Urucará")
     e.cidades.create(:nome => "Urucurituba")
+    e.capital = Cidade.find_by_nome_and_estado_id('Manaus', Estado.find_by_nome('Amazonas').id)
+    e.save
 
     e = Estado.create(:sigla => 'AP', :nome => "Amapá")
     e.cidades.create(:nome => "Amapá")
@@ -200,7 +206,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Ferreira Gomes")
     e.cidades.create(:nome => "Itaubal")
     e.cidades.create(:nome => "Laranjal do Jari")
-    e.cidades.create(:nome => "Macapá", :capital => true)
+    e.cidades.create(:nome => "Macapá")
     e.cidades.create(:nome => "Mazagão")
     e.cidades.create(:nome => "Oiapoque")
     e.cidades.create(:nome => "Pedra Branca do Amapari")
@@ -210,6 +216,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Serra do Navio")
     e.cidades.create(:nome => "Tartarugalzinho")
     e.cidades.create(:nome => "Vitória do Jari")
+    e.capital = Cidade.find_by_nome_and_estado_id('Macapá', Estado.find_by_nome('Amapá').id)
+    e.save
 
     e = Estado.create(:sigla => 'BA', :nome => "Bahia")
     e.cidades.create(:nome => "Abaré")
@@ -547,7 +555,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Rodelas")
     e.cidades.create(:nome => "Ruy Barbosa")
     e.cidades.create(:nome => "Salinas da Margarida")
-    e.cidades.create(:nome => "Salvador", :capital => true)
+    e.cidades.create(:nome => "Salvador")
     e.cidades.create(:nome => "Santa Brígida")
     e.cidades.create(:nome => "Santa Bárbara")
     e.cidades.create(:nome => "Santa Cruz Cabrália")
@@ -629,7 +637,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Wanderley")
     e.cidades.create(:nome => "Wenceslau Guimarães")
     e.cidades.create(:nome => "Xique-Xique")
-
+    e.capital = Cidade.find_by_nome_and_estado_id('Salvador', Estado.find_by_nome('Bahia').id)
+    e.save
 
     e = Estado.create(:sigla => 'CE', :nome => "Ceará")
     e.cidades.create(:nome => "Abaiara")
@@ -690,7 +699,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Eusébio")
     e.cidades.create(:nome => "Farias Brito")
     e.cidades.create(:nome => "Forquilha")
-    e.cidades.create(:nome => "Fortaleza", :capital => true)
+    e.cidades.create(:nome => "Fortaleza")
     e.cidades.create(:nome => "Fortim")
     e.cidades.create(:nome => "Frecheirinha")
     e.cidades.create(:nome => "General Sampaio")
@@ -816,11 +825,13 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Varjota")
     e.cidades.create(:nome => "Viçosa do Ceará")
     e.cidades.create(:nome => "Várzea Alegre")
+    e.capital = Cidade.find_by_nome_and_estado_id('Fortaleza', Estado.find_by_nome('Ceará').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'DF', :nome => "Distrito Federal")
     e.cidades.create(:nome => "Águas Claras")
-    e.cidades.create(:nome => "Brasília", :capital => true)
+    e.cidades.create(:nome => "Brasília")
     e.cidades.create(:nome => "Brazlândia")
     e.cidades.create(:nome => "Candangolândia")
     e.cidades.create(:nome => "Ceilândia")
@@ -848,6 +859,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Sudoeste e Octogonal")
     e.cidades.create(:nome => "Taguatinga")
     e.cidades.create(:nome => "Varjão")
+    e.capital = Cidade.find_by_nome_and_estado_id('Brasília', Estado.find_by_nome('Distrito Federal').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'ES', :nome => "Espírito Santo")
@@ -928,7 +941,9 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vila Pavão")
     e.cidades.create(:nome => "Vila Valério")
     e.cidades.create(:nome => "Vila Velha")
-    e.cidades.create(:nome => "Vitória", :capital => true)
+    e.cidades.create(:nome => "Vitória")
+    e.capital = Cidade.find_by_nome_and_estado_id('Vitória', Estado.find_by_nome('Espírito Santo').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'GO', :nome => "Goiás")
@@ -1029,7 +1044,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Goianésia")
     e.cidades.create(:nome => "Goiatuba")
     e.cidades.create(:nome => "Goiás")
-    e.cidades.create(:nome => "Goiânia", :capital => true)
+    e.cidades.create(:nome => "Goiânia")
     e.cidades.create(:nome => "Gouvelândia")
     e.cidades.create(:nome => "Guapó")
     e.cidades.create(:nome => "Guarani de Goiás")
@@ -1178,6 +1193,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vicentinópolis")
     e.cidades.create(:nome => "Vila Boa")
     e.cidades.create(:nome => "Vila Propício")
+    e.capital = Cidade.find_by_nome_and_estado_id('Goiânia', Estado.find_by_nome('Goiás').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'MA', :nome => "Maranhão")
@@ -1372,7 +1389,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "São João do Paraíso")
     e.cidades.create(:nome => "São João do Soter")
     e.cidades.create(:nome => "São João dos Patos")
-    e.cidades.create(:nome => "São Luís", :capital => true)
+    e.cidades.create(:nome => "São Luís")
     e.cidades.create(:nome => "São Luís Gonzaga do Maranhão")
     e.cidades.create(:nome => "São Mateus do Maranhão")
     e.cidades.create(:nome => "São Pedro da Água Branca")
@@ -1398,6 +1415,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vitorino Freire")
     e.cidades.create(:nome => "Vitória do Mearim")
     e.cidades.create(:nome => "Zé Doca")
+    e.capital = Cidade.find_by_nome_and_estado_id('São Luís', Estado.find_by_nome('Maranhão').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'MG', :nome => "Minas Gerais")
@@ -1466,7 +1485,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Barão de Monte Alto")
     e.cidades.create(:nome => "Bela Vista de Minas")
     e.cidades.create(:nome => "Belmiro Braga")
-    e.cidades.create(:nome => "Belo Horizonte", :capital => true)
+    e.cidades.create(:nome => "Belo Horizonte")
     e.cidades.create(:nome => "Belo Oriente")
     e.cidades.create(:nome => "Belo Vale")
     e.cidades.create(:nome => "Berilo")
@@ -2254,6 +2273,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Volta Grande")
     e.cidades.create(:nome => "Várzea da Palma")
     e.cidades.create(:nome => "Wenceslau Braz")
+    e.capital = Cidade.find_by_nome_and_estado_id('Belo Horizonte', Estado.find_by_nome('Minas Gerais').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'MS', :nome => "Mato Grosso do Sul")
@@ -2276,7 +2297,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Brasilândia")
     e.cidades.create(:nome => "Caarapó")
     e.cidades.create(:nome => "Camapuã")
-    e.cidades.create(:nome => "Campo Grande", :capital => true)
+    e.cidades.create(:nome => "Campo Grande")
     e.cidades.create(:nome => "Caracol")
     e.cidades.create(:nome => "Cassilândia")
     e.cidades.create(:nome => "Chapadão do Sul")
@@ -2335,6 +2356,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Terenos")
     e.cidades.create(:nome => "Três Lagoas")
     e.cidades.create(:nome => "Vicentina")
+    e.capital = Cidade.find_by_nome_and_estado_id('Campo Grande', Estado.find_by_nome('Mato Grosso do Sul').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'MT', :nome => "Mato Grosso")
@@ -2374,7 +2397,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Confresa")
     e.cidades.create(:nome => "Conquista D'Oeste")
     e.cidades.create(:nome => "Cotriguaçu")
-    e.cidades.create(:nome => "Cuiabá", :capital => true)
+    e.cidades.create(:nome => "Cuiabá")
     e.cidades.create(:nome => "Curvelândia")
     e.cidades.create(:nome => "Cáceres")
     e.cidades.create(:nome => "Denise")
@@ -2479,6 +2502,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vila Bela da Santíssima Trindade")
     e.cidades.create(:nome => "Vila Rica")
     e.cidades.create(:nome => "Várzea Grande")
+    e.capital = Cidade.find_by_nome_and_estado_id('Cuiabá', Estado.find_by_nome('Mato Grosso').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'PA', :nome => "Pará")
@@ -2501,7 +2526,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Bannach")
     e.cidades.create(:nome => "Barcarena")
     e.cidades.create(:nome => "Belterra")
-    e.cidades.create(:nome => "Belém", :capital => true)
+    e.cidades.create(:nome => "Belém")
     e.cidades.create(:nome => "Benevides")
     e.cidades.create(:nome => "Bom Jesus do Tocantins")
     e.cidades.create(:nome => "Bonito")
@@ -2625,6 +2650,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Viseu")
     e.cidades.create(:nome => "Vitória do Xingu")
     e.cidades.create(:nome => "Xinguara")
+    e.capital = Cidade.find_by_nome_and_estado_id('Belém', Estado.find_by_nome('Pará').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'PB', :nome => "Paraíba")
@@ -2722,7 +2749,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Itatuba")
     e.cidades.create(:nome => "Jacaraú")
     e.cidades.create(:nome => "Jericó")
-    e.cidades.create(:nome => "João Pessoa", :capital => true)
+    e.cidades.create(:nome => "João Pessoa")
     e.cidades.create(:nome => "Juarez Távora")
     e.cidades.create(:nome => "Juazeirinho")
     e.cidades.create(:nome => "Junco do Seridó")
@@ -2851,6 +2878,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vista Serrana")
     e.cidades.create(:nome => "Várzea")
     e.cidades.create(:nome => "Zabelê")
+    e.capital = Cidade.find_by_nome_and_estado_id('João Pessoa', Estado.find_by_nome('Paraíba').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'PE', :nome => "Pernambuco")
@@ -2986,7 +3015,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Primavera")
     e.cidades.create(:nome => "Quipapá")
     e.cidades.create(:nome => "Quixaba")
-    e.cidades.create(:nome => "Recife", :capital => true)
+    e.cidades.create(:nome => "Recife")
     e.cidades.create(:nome => "Riacho das Almas")
     e.cidades.create(:nome => "Ribeirão")
     e.cidades.create(:nome => "Rio Formoso")
@@ -3039,7 +3068,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vicência")
     e.cidades.create(:nome => "Vitória de Santo Antão")
     e.cidades.create(:nome => "Xexéu")
-
+    e.capital = Cidade.find_by_nome_and_estado_id('Recife', Estado.find_by_nome('Pernambuco').id)
+    e.save
 
     e = Estado.create(:sigla => 'PI', :nome => "Piauí")
     e.cidades.create(:nome => "Acauã")
@@ -3256,7 +3286,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "São Raimundo Nonato")
     e.cidades.create(:nome => "Tamboril do Piauí")
     e.cidades.create(:nome => "Tanque do Piauí")
-    e.cidades.create(:nome => "Teresina", :capital => true)
+    e.cidades.create(:nome => "Teresina")
     e.cidades.create(:nome => "União")
     e.cidades.create(:nome => "Uruçuí")
     e.cidades.create(:nome => "Valença do Piauí")
@@ -3265,6 +3295,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Várzea Branca")
     e.cidades.create(:nome => "Várzea Grande")
     e.cidades.create(:nome => "Wall Ferraz")
+    e.capital = Cidade.find_by_nome_and_estado_id('Teresina', Estado.find_by_nome('Piauí').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'PR', :nome => "Paraná")
@@ -3360,7 +3392,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Cruzeiro do Oeste")
     e.cidades.create(:nome => "Cruzeiro do Sul")
     e.cidades.create(:nome => "Cruzmaltina")
-    e.cidades.create(:nome => "Curitiba", :capital => true)
+    e.cidades.create(:nome => "Curitiba")
     e.cidades.create(:nome => "Curiúva")
     e.cidades.create(:nome => "Cândido de Abreu")
     e.cidades.create(:nome => "Céu Azul")
@@ -3667,6 +3699,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vitorino")
     e.cidades.create(:nome => "Wenceslau Braz")
     e.cidades.create(:nome => "Xambrê")
+    e.capital = Cidade.find_by_nome_and_estado_id('Curitiba', Estado.find_by_nome('Paraná').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'RJ', :nome => "Rio de Janeiro")
@@ -3737,7 +3771,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Rio Claro")
     e.cidades.create(:nome => "Rio das Flores")
     e.cidades.create(:nome => "Rio das Ostras")
-    e.cidades.create(:nome => "Rio de Janeiro", :capital => true)
+    e.cidades.create(:nome => "Rio de Janeiro")
     e.cidades.create(:nome => "Santa Maria Madalena")
     e.cidades.create(:nome => "Santo Antônio de Pádua")
     e.cidades.create(:nome => "Sapucaia")
@@ -3762,6 +3796,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Varre-Sai")
     e.cidades.create(:nome => "Vassouras")
     e.cidades.create(:nome => "Volta Redonda")
+    e.capital = Cidade.find_by_nome_and_estado_id('Rio de Janeiro', Estado.find_by_nome('Rio de Janeiro').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'RN', :nome => "Rio Grande do Norte")
@@ -3852,7 +3888,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Monte Alegre")
     e.cidades.create(:nome => "Monte das Gameleiras")
     e.cidades.create(:nome => "Mossoró")
-    e.cidades.create(:nome => "Natal", :capital => true)
+    e.cidades.create(:nome => "Natal")
     e.cidades.create(:nome => "Nova Cruz")
     e.cidades.create(:nome => "Nísia Floresta")
     e.cidades.create(:nome => "Olho-d'Água do Borges")
@@ -3932,6 +3968,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vila Flor")
     e.cidades.create(:nome => "Viçosa")
     e.cidades.create(:nome => "Várzea")
+    e.capital = Cidade.find_by_nome_and_estado_id('Natal', Estado.find_by_nome('Rio Grande do Norte').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'RO', :nome => "Rondônia")
@@ -3971,7 +4009,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Parecis")
     e.cidades.create(:nome => "Pimenta Bueno")
     e.cidades.create(:nome => "Pimenteiras do Oeste")
-    e.cidades.create(:nome => "Porto Velho", :capital => true)
+    e.cidades.create(:nome => "Porto Velho")
     e.cidades.create(:nome => "Presidente Médici")
     e.cidades.create(:nome => "Primavera de Rondônia")
     e.cidades.create(:nome => "Rio Crespo")
@@ -3987,12 +4025,14 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vale do Anari")
     e.cidades.create(:nome => "Vale do Paraíso")
     e.cidades.create(:nome => "Vilhena")
+    e.capital = Cidade.find_by_nome_and_estado_id('Porto Velho', Estado.find_by_nome('Rondônia').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'RR', :nome => "Roraima")
     e.cidades.create(:nome => "Alto Alegre")
     e.cidades.create(:nome => "Amajari")
-    e.cidades.create(:nome => "Boa Vista", :capital => true)
+    e.cidades.create(:nome => "Boa Vista")
     e.cidades.create(:nome => "Bonfim")
     e.cidades.create(:nome => "Cantá")
     e.cidades.create(:nome => "Caracaraí")
@@ -4005,6 +4045,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "São João da Baliza")
     e.cidades.create(:nome => "São Luiz")
     e.cidades.create(:nome => "Uiramutã")
+    e.capital = Cidade.find_by_nome_and_estado_id('Boa Vista', Estado.find_by_nome('Roraima').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'RS', :nome => "Rio Grande do Sul")
@@ -4330,7 +4372,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Planalto")
     e.cidades.create(:nome => "Ponte Preta")
     e.cidades.create(:nome => "Pontão")
-    e.cidades.create(:nome => "Porto Alegre", :capital => true)
+    e.cidades.create(:nome => "Porto Alegre")
     e.cidades.create(:nome => "Porto Lucena")
     e.cidades.create(:nome => "Porto Mauá")
     e.cidades.create(:nome => "Porto Vera Cruz")
@@ -4504,6 +4546,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Vitória das Missões")
     e.cidades.create(:nome => "Westfalia")
     e.cidades.create(:nome => "Xangri-lá")
+    e.capital = Cidade.find_by_nome_and_estado_id('Porto Alegre', Estado.find_by_nome('Rio Grande do Sul').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'SC', :nome => "Santa Catarina")
@@ -4595,7 +4639,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Erval Velho")
     e.cidades.create(:nome => "Faxinal dos Guedes")
     e.cidades.create(:nome => "Flor do Sertão")
-    e.cidades.create(:nome => "Florianópolis", :capital => true)
+    e.cidades.create(:nome => "Florianópolis")
     e.cidades.create(:nome => "Formosa do Sul")
     e.cidades.create(:nome => "Forquilhinha")
     e.cidades.create(:nome => "Fraiburgo")
@@ -4800,12 +4844,14 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Xavantina")
     e.cidades.create(:nome => "Xaxim")
     e.cidades.create(:nome => "Zortéa")
+    e.capital = Cidade.find_by_nome_and_estado_id('Florianópolis', Estado.find_by_nome('Santa Catarina').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'SE', :nome => "Sergipe")
     e.cidades.create(:nome => "Amparo de São Francisco")
     e.cidades.create(:nome => "Aquidabã")
-    e.cidades.create(:nome => "Aracaju", :capital => true)
+    e.cidades.create(:nome => "Aracaju")
     e.cidades.create(:nome => "Arauá")
     e.cidades.create(:nome => "Areia Branca")
     e.cidades.create(:nome => "Barra dos Coqueiros")
@@ -4878,6 +4924,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Tobias Barreto")
     e.cidades.create(:nome => "Tomar do Geru")
     e.cidades.create(:nome => "Umbaúba")
+    e.capital = Cidade.find_by_nome_and_estado_id('Aracaju', Estado.find_by_nome('Sergipe').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'SP', :nome => "São Paulo")
@@ -5461,7 +5509,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "São Luís do Paraitinga")
     e.cidades.create(:nome => "São Manuel")
     e.cidades.create(:nome => "São Miguel Arcanjo")
-    e.cidades.create(:nome => "São Paulo", :capital => true)
+    e.cidades.create(:nome => "São Paulo")
     e.cidades.create(:nome => "São Pedro")
     e.cidades.create(:nome => "São Pedro do Turvo")
     e.cidades.create(:nome => "São Roque")
@@ -5526,6 +5574,8 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Votuporanga")
     e.cidades.create(:nome => "Várzea Paulista")
     e.cidades.create(:nome => "Zacarias")
+    e.capital = Cidade.find_by_nome_and_estado_id('São Paulo', Estado.find_by_nome('São Paulo').id)
+    e.save
 
 
     e = Estado.create(:sigla => 'TO', :nome => "Tocantins")
@@ -5617,7 +5667,7 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Novo Alegre")
     e.cidades.create(:nome => "Novo Jardim")
     e.cidades.create(:nome => "Oliveira de Fátima")
-    e.cidades.create(:nome => "Palmas", :capital => true)
+    e.cidades.create(:nome => "Palmas")
     e.cidades.create(:nome => "Palmeirante")
     e.cidades.create(:nome => "Palmeiras do Tocantins")
     e.cidades.create(:nome => "Palmeirópolis")
@@ -5668,6 +5718,9 @@ class PopulaEstadosCidades < ActiveRecord::Migration
     e.cidades.create(:nome => "Tupiratins")
     e.cidades.create(:nome => "Wanderlândia")
     e.cidades.create(:nome => "Xambioá")
+    e.capital = Cidade.find_by_nome_and_estado_id('Palmas', Estado.find_by_nome('Tocantins').id)
+    e.save
+    
   end
 
   def self.down

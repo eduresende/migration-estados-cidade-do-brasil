@@ -7,17 +7,19 @@ class Estado < ActiveRecord::Base
   attr_accessible :nome, :sigla
 
   has_many :cidades
+
+  belongs_to :capital, :class_name => 'Cidade'
 end
 
 
 Cidade
 class Cidade < ActiveRecord::Base
   belongs_to :estado
-  attr_accessible :nome, :capital
+  attr_accessible :nome
 end
 
 
 - Modifiquei o migrarion para que funcione com Rails 3 e também funcionar também com Rails 2 :)
 - Incluindo '# -*- coding: UTF-8 -*-' no topo do arquivo para ruby 1.9.x
 - Modifiquei o nome da classe da migration que popula os estados e cidades. O rake esta comparando o nome do arquivo com o nome da classe e gerando um erro.
-- Incluí a propriedade "capital" no model "Cidade", para que seja possivel exibir a capital primeiro em um combo, por exemplo.
+- Incluí a propriedade "capital" no model "Estado", para que seja possivel identificar a cidade que é capital do estado, para ordenar um combo priorizando a capital, por exemplo.
