@@ -1,8 +1,11 @@
 Migration que popula o banco de dados com os estados e cidades do Brasil com dados extraídos do site do IBGE, em http://www.sidra.ibge.gov.br/bda/territorio/download/dtb2006.zip
 
-para utilizá-la é necessário criar os seguintes models
+Para utilizá-la é necessário criar os seguintes models:
 
-Estado
+##Rails 3##
+
+`Estado.rb`
+```
 class Estado < ActiveRecord::Base
   attr_accessible :nome, :sigla
 
@@ -10,16 +13,42 @@ class Estado < ActiveRecord::Base
 
   belongs_to :capital, :class_name => 'Cidade'
 end
+```
 
-
-Cidade
+`Cidade.rb`
+```
 class Cidade < ActiveRecord::Base
   belongs_to :estado
   attr_accessible :nome
 end
+```
 
+##Rails 4##
 
-- Modifiquei o migrarion para que funcione com Rails 3 e também funcionar também com Rails 2 :)
+`Estado.rb`
+```
+class Estado < ActiveRecord::Base
+  has_many :cidades
+
+  belongs_to :capital, :class_name => 'Cidade'
+
+  def estado_params
+    params.require(:estado).permit(:nome, :sigla, :capital)
+  end
+end
+```
+`Cidade.rb`
+```
+class Cidade < ActiveRecord::Base
+  belongs_to :estado
+
+  def cidade_params
+    params.require(:cidade).permit(:nome)
+  end
+end
+```
+
+- Modificado o migration para que funcione com versões do Rails 2, 3 e 4
 - Incluindo '# -*- coding: UTF-8 -*-' no topo do arquivo para ruby 1.9.x
 - Modifiquei o nome da classe da migration que popula os estados e cidades. O rake esta comparando o nome do arquivo com o nome da classe e gerando um erro.
 - Incluí a propriedade "capital" no model "Estado", para que seja possivel identificar a cidade que é capital do estado, para ordenar um combo priorizando a capital, por exemplo.
